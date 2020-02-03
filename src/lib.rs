@@ -17,7 +17,7 @@ assert_eq!(get_canonical_combining_class('\u{18A9}'), CanonicalCombiningClass::A
 
 #![forbid(unsafe_code)]
 
-/// Character orientation.
+/// Character Canonical Combining Class.
 #[derive(Clone, Copy, PartialEq, Debug)]
 pub enum CanonicalCombiningClass {
     NotReordered = 0,
