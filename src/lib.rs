@@ -17,6 +17,9 @@ assert_eq!(get_canonical_combining_class('\u{18A9}'), CanonicalCombiningClass::A
 
 #![forbid(unsafe_code)]
 
+/// The Unicode version.
+pub const UNICODE_VERSION: (u8, u8, u8) = (13, 0, 0);
+
 /// Character Canonical Combining Class.
 #[derive(Clone, Copy, PartialEq, Debug)]
 pub enum CanonicalCombiningClass {
