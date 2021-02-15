@@ -10,7 +10,7 @@ if not os.path.exists(FILE_NAME):
     urllib.request.urlretrieve(URL, FILE_NAME)
 
 classes = dict()
-last_class = ""
+last_class = ''
 ranges = []
 with open(FILE_NAME) as f:
     for line in f:

@@ -92,7 +92,7 @@ pub enum CanonicalCombiningClass {
 
 /// Returns a Canonical Combining Class of a character.
 ///
-/// Based on <https://www.unicode.org/Public/11.0.0/ucd/extracted/DerivedCombiningClass.txt>.
+/// Based on <https://www.unicode.org/Public/13.0.0/ucd/extracted/DerivedCombiningClass.txt>.
 pub fn get_canonical_combining_class(c: char) -> CanonicalCombiningClass {
     use CanonicalCombiningClass::*;
 
