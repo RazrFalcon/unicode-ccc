@@ -13,6 +13,7 @@ assert_eq!(get_canonical_combining_class('\u{18A9}'), CanonicalCombiningClass::A
 
 */
 
+#![no_std]
 #![doc(html_root_url = "https://docs.rs/unicode-ccc/0.1.0")]
 
 #![forbid(unsafe_code)]
