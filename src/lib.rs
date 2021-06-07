@@ -463,6 +463,7 @@ pub fn get_canonical_combining_class(c: char) -> CanonicalCombiningClass {
         0x035D..=0x035E => DoubleAbove,
         0x0360..=0x0361 => DoubleAbove,
         0x1DCD => DoubleAbove,
+        0x0345 => IotaSubscript,
         _ => NotReordered,
     }
 }
