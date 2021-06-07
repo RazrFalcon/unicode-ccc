@@ -38,6 +38,7 @@ with open(FILE_NAME) as f:
             ranges.append([start, end])
         else:
             ranges.append([range, None])
+    classes[last_class] = ranges
 
 for class_name, ranges in classes.items():
     if class_name == 'NotReordered':
