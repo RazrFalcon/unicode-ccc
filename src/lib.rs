@@ -14,12 +14,11 @@ assert_eq!(get_canonical_combining_class('\u{18A9}'), CanonicalCombiningClass::A
 */
 
 #![no_std]
-#![doc(html_root_url = "https://docs.rs/unicode-ccc/0.1.2")]
 
 #![forbid(unsafe_code)]
 
 /// The Unicode version.
-pub const UNICODE_VERSION: (u8, u8, u8) = (13, 0, 0);
+pub const UNICODE_VERSION: (u8, u8, u8) = (14, 0, 0);
 
 /// Character Canonical Combining Class.
 #[derive(Clone, Copy, PartialEq, Debug)]
@@ -92,7 +91,7 @@ pub enum CanonicalCombiningClass {
 
 /// Returns a Canonical Combining Class of a character.
 ///
-/// Based on <https://www.unicode.org/Public/13.0.0/ucd/extracted/DerivedCombiningClass.txt>.
+/// Based on <https://www.unicode.org/Public/14.0.0/ucd/extracted/DerivedCombiningClass.txt>.
 pub fn get_canonical_combining_class(c: char) -> CanonicalCombiningClass {
     use CanonicalCombiningClass::*;
 
@@ -114,6 +113,7 @@ pub fn get_canonical_combining_class(c: char) -> CanonicalCombiningClass {
         0x0A3C => Nukta,
         0x0ABC => Nukta,
         0x0B3C => Nukta,
+        0x0C3C => Nukta,
         0x0CBC => Nukta,
         0x1037 => Nukta,
         0x1B34 => Nukta,
@@ -151,6 +151,7 @@ pub fn get_canonical_combining_class(c: char) -> CanonicalCombiningClass {
         0x0F84 => Virama,
         0x1039..=0x103A => Virama,
         0x1714 => Virama,
+        0x1715 => Virama,
         0x1734 => Virama,
         0x17D2 => Virama,
         0x1A60 => Virama,
@@ -168,6 +169,7 @@ pub fn get_canonical_combining_class(c: char) -> CanonicalCombiningClass {
         0xABED => Virama,
         0x10A3F => Virama,
         0x11046 => Virama,
+        0x11070 => Virama,
         0x1107F => Virama,
         0x110B9 => Virama,
         0x11133..=0x11134 => Virama,
@@ -244,6 +246,7 @@ pub fn get_canonical_combining_class(c: char) -> CanonicalCombiningClass {
         0x0F39 => AttachedAboveRight,
         0x1D165..=0x1D166 => AttachedAboveRight,
         0x1D16E..=0x1D172 => AttachedAboveRight,
+        0x1DFA => BelowLeft,
         0x302A => BelowLeft,
         0x0316..=0x0319 => Below,
         0x031C..=0x0320 => Below,
@@ -278,7 +281,8 @@ pub fn get_canonical_combining_class(c: char) -> CanonicalCombiningClass {
         0x07F2 => Below,
         0x07FD => Below,
         0x0859..=0x085B => Below,
-        0x08D3 => Below,
+        0x0899..=0x089B => Below,
+        0x08CF..=0x08D3 => Below,
         0x08E3 => Below,
         0x08E6 => Below,
         0x08E9 => Below,
@@ -297,6 +301,8 @@ pub fn get_canonical_combining_class(c: char) -> CanonicalCombiningClass {
         0x1AB5..=0x1ABA => Below,
         0x1ABD => Below,
         0x1ABF..=0x1AC0 => Below,
+        0x1AC3..=0x1AC4 => Below,
+        0x1ACA => Below,
         0x1B6C => Below,
         0x1CD5..=0x1CD9 => Below,
         0x1CDC..=0x1CDF => Below,
@@ -320,6 +326,8 @@ pub fn get_canonical_combining_class(c: char) -> CanonicalCombiningClass {
         0x10F46..=0x10F47 => Below,
         0x10F4B => Below,
         0x10F4D..=0x10F50 => Below,
+        0x10F83 => Below,
+        0x10F85 => Below,
         0x1D17B..=0x1D182 => Below,
         0x1D18A..=0x1D18B => Below,
         0x1E8D0..=0x1E8D6 => Below,
@@ -374,6 +382,9 @@ pub fn get_canonical_combining_class(c: char) -> CanonicalCombiningClass {
         0x081B..=0x0823 => Above,
         0x0825..=0x0827 => Above,
         0x0829..=0x082D => Above,
+        0x0898 => Above,
+        0x089C..=0x089F => Above,
+        0x08CA..=0x08CE => Above,
         0x08D4..=0x08E1 => Above,
         0x08E4..=0x08E5 => Above,
         0x08E7..=0x08E8 => Above,
@@ -393,6 +404,9 @@ pub fn get_canonical_combining_class(c: char) -> CanonicalCombiningClass {
         0x1A75..=0x1A7C => Above,
         0x1AB0..=0x1AB4 => Above,
         0x1ABB..=0x1ABC => Above,
+        0x1AC1..=0x1AC2 => Above,
+        0x1AC5..=0x1AC9 => Above,
+        0x1ACB..=0x1ACE => Above,
         0x1B6B => Above,
         0x1B6D..=0x1B73 => Above,
         0x1CD0..=0x1CD2 => Above,
@@ -435,6 +449,8 @@ pub fn get_canonical_combining_class(c: char) -> CanonicalCombiningClass {
         0x10EAB..=0x10EAC => Above,
         0x10F48..=0x10F4A => Above,
         0x10F4C => Above,
+        0x10F82 => Above,
+        0x10F84 => Above,
         0x11100..=0x11102 => Above,
         0x11366..=0x1136C => Above,
         0x11370..=0x11374 => Above,
@@ -449,6 +465,7 @@ pub fn get_canonical_combining_class(c: char) -> CanonicalCombiningClass {
         0x1E023..=0x1E024 => Above,
         0x1E026..=0x1E02A => Above,
         0x1E130..=0x1E136 => Above,
+        0x1E2AE => Above,
         0x1E2EC..=0x1E2EF => Above,
         0x1E944..=0x1E949 => Above,
         0x0315 => AboveRight,

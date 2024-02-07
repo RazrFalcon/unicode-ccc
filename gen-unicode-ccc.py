@@ -3,7 +3,7 @@
 import urllib.request
 import os
 
-URL = 'https://www.unicode.org/Public/13.0.0/ucd/extracted/DerivedCombiningClass.txt'
+URL = 'https://www.unicode.org/Public/14.0.0/ucd/extracted/DerivedCombiningClass.txt'
 FILE_NAME = 'DerivedCombiningClass.txt'
 
 if not os.path.exists(FILE_NAME):
