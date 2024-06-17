@@ -18,7 +18,7 @@ assert_eq!(get_canonical_combining_class('\u{18A9}'), CanonicalCombiningClass::A
 #![forbid(unsafe_code)]
 
 /// The Unicode version.
-pub const UNICODE_VERSION: (u8, u8, u8) = (14, 0, 0);
+pub const UNICODE_VERSION: (u8, u8, u8) = (15, 0, 0);
 
 /// Character Canonical Combining Class.
 #[derive(Clone, Copy, PartialEq, Debug)]
@@ -193,6 +193,8 @@ pub fn get_canonical_combining_class(c: char) -> CanonicalCombiningClass {
         0x11C3F => Virama,
         0x11D44..=0x11D45 => Virama,
         0x11D97 => Virama,
+        0x11F41 => Virama,
+        0x11F42 => Virama,
         0x05B0 => CCC10,
         0x05B1 => CCC11,
         0x05B2 => CCC12,
@@ -323,6 +325,7 @@ pub fn get_canonical_combining_class(c: char) -> CanonicalCombiningClass {
         0x10A0D => Below,
         0x10A3A => Below,
         0x10AE6 => Below,
+        0x10EFD..=0x10EFF => Below,
         0x10F46..=0x10F47 => Below,
         0x10F4B => Below,
         0x10F4D..=0x10F50 => Below,
@@ -330,6 +333,7 @@ pub fn get_canonical_combining_class(c: char) -> CanonicalCombiningClass {
         0x10F85 => Below,
         0x1D17B..=0x1D182 => Below,
         0x1D18A..=0x1D18B => Below,
+        0x1E4EE => Below,
         0x1E8D0..=0x1E8D6 => Below,
         0x059A => BelowRight,
         0x05AD => BelowRight,
@@ -464,15 +468,18 @@ pub fn get_canonical_combining_class(c: char) -> CanonicalCombiningClass {
         0x1E01B..=0x1E021 => Above,
         0x1E023..=0x1E024 => Above,
         0x1E026..=0x1E02A => Above,
+        0x1E08F => Above,
         0x1E130..=0x1E136 => Above,
         0x1E2AE => Above,
         0x1E2EC..=0x1E2EF => Above,
+        0x1E4EF => Above,
         0x1E944..=0x1E949 => Above,
         0x0315 => AboveRight,
         0x031A => AboveRight,
         0x0358 => AboveRight,
         0x1DF6 => AboveRight,
         0x302C => AboveRight,
+        0x1E4EC..=0x1E4ED => AboveRight,
         0x035C => DoubleBelow,
         0x035F => DoubleBelow,
         0x0362 => DoubleBelow,
