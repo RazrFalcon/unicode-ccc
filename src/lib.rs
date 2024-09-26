@@ -18,7 +18,7 @@ assert_eq!(get_canonical_combining_class('\u{18A9}'), CanonicalCombiningClass::A
 #![forbid(unsafe_code)]
 
 /// The Unicode version.
-pub const UNICODE_VERSION: (u8, u8, u8) = (15, 0, 0);
+pub const UNICODE_VERSION: (u8, u8, u8) = (16, 0, 0);
 
 /// Character Canonical Combining Class.
 #[derive(Clone, Copy, PartialEq, Debug)]
@@ -177,6 +177,9 @@ pub fn get_canonical_combining_class(c: char) -> CanonicalCombiningClass {
         0x11235 => Virama,
         0x112EA => Virama,
         0x1134D => Virama,
+        0x113CE => Virama,
+        0x113CF => Virama,
+        0x113D0 => Virama,
         0x11442 => Virama,
         0x114C2 => Virama,
         0x115BF => Virama,
@@ -195,6 +198,7 @@ pub fn get_canonical_combining_class(c: char) -> CanonicalCombiningClass {
         0x11D97 => Virama,
         0x11F41 => Virama,
         0x11F42 => Virama,
+        0x1612F => Virama,
         0x05B0 => CCC10,
         0x05B1 => CCC11,
         0x05B2 => CCC12,
@@ -334,6 +338,7 @@ pub fn get_canonical_combining_class(c: char) -> CanonicalCombiningClass {
         0x1D17B..=0x1D182 => Below,
         0x1D18A..=0x1D18B => Below,
         0x1E4EE => Below,
+        0x1E5EF => Below,
         0x1E8D0..=0x1E8D6 => Below,
         0x059A => BelowRight,
         0x05AD => BelowRight,
@@ -386,7 +391,7 @@ pub fn get_canonical_combining_class(c: char) -> CanonicalCombiningClass {
         0x081B..=0x0823 => Above,
         0x0825..=0x0827 => Above,
         0x0829..=0x082D => Above,
-        0x0898 => Above,
+        0x0897..=0x0898 => Above,
         0x089C..=0x089F => Above,
         0x08CA..=0x08CE => Above,
         0x08D4..=0x08E1 => Above,
@@ -450,6 +455,7 @@ pub fn get_canonical_combining_class(c: char) -> CanonicalCombiningClass {
         0x10A38 => Above,
         0x10AE5 => Above,
         0x10D24..=0x10D27 => Above,
+        0x10D69..=0x10D6D => Above,
         0x10EAB..=0x10EAC => Above,
         0x10F48..=0x10F4A => Above,
         0x10F4C => Above,
@@ -473,6 +479,7 @@ pub fn get_canonical_combining_class(c: char) -> CanonicalCombiningClass {
         0x1E2AE => Above,
         0x1E2EC..=0x1E2EF => Above,
         0x1E4EF => Above,
+        0x1E5EE => Above,
         0x1E944..=0x1E949 => Above,
         0x0315 => AboveRight,
         0x031A => AboveRight,
